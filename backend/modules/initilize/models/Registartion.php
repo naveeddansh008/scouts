@@ -32,12 +32,15 @@ class Registartion extends BaseRegistartion
     }
     public function getImageUrl($id = null)
     {
-        $url = Yii::getAlias('@storage/web/uploads/std_reg/');
-        $photo_name = Yii::$app->db->createCommand("select p.name from photo p where status=1 and scout_id = $id")->queryOne();
+       // $url = Yii::getAlias('@storage/web/uploads/std_reg/');
+        $photo_name = Yii::$app->db->createCommand("select p.name from photo p where status=1 and scout_id =".$id)->queryOne();
+
+         
         $photo_name = $photo_name['name'];
-        $url = $url.$photo_name;
+        $dataurl = Url::to('@storageUrl/uploads/std_reg/').$photo_name;
+      //  $url = $url.$photo_name;
         // $url = Url::to('@storage/uploads/std_reg/'.$photo_name, true);
-        return $url;
+        return $dataurl;
     }
 	
 }

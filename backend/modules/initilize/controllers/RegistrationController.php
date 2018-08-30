@@ -95,16 +95,14 @@ class RegistrationController extends Controller
                ] ]);
 
 
-        if ($model->getModel('registartionModel')->load(Yii::$app->request->post()) && $model->getModel('photoModel')->load(Yii::$app->request->post())) {
-            // var_dump($model->getMOdel('photoModel')->name);
-            // exit();
-    
-
-      
-             $registartionModel->save(false);
+        if ($model->getModel('registartionModel')->load(Yii::$app->request->post()) && $model->getModel('photoModel')->load(Yii::$app->request->post()))
+         {
+           
+            $registartionModel->save(false);
             $photoModel->savePhoto($model->getModel('photoModel'),$model->getModel('registartionModel')->id,Photo::STD_REG,'/std_reg/','image');
               
             return $this->redirect(['index']);
+            
         } else {
             return $this->render('create', [
                 'model' => $model,
