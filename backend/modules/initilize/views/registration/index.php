@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\modules\initilize\models\RegistrationSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -37,9 +38,14 @@ $this->registerJs($search);
             'label'     => 'Photo',
             'format'=>'html',
             'content' => function($model){
-                $photo_name = Yii::$app->db->createCommand("select p.name from photo p where status=1 and scout_id = $model->id")->queryOne();
-                $img = (Html::img(\yii\helpers\Url::to('@storageUrl/uploads/std_reg/'.$model->image->name)));
-                return $img;
+               // $photo_name = Yii::$app->db->createCommand("select p.name from photo p where status=1 and scout_id = $model->id")->queryOne();
+
+                $urls = $model->getImageUrl($model->id);
+                var_dump($urls);
+               exit();
+                $img = (Html::img($urls));
+            
+               // return $img;
                 },
 
         ],
