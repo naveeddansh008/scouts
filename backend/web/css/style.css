@@ -1,0 +1,37 @@
+body > .header .logo {
+  font-family: inherit;
+}
+body > .header .navbar .nav > li > a > .badge {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 75%;
+}
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .glyphicon,
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .fa,
+body .navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a > .ion {
+  background: none;
+  color: inherit;
+}
+body .user-panel > .info {
+  padding-left: 10px;
+}
+fieldset.scheduler-border {
+  border: 1px solid #ddd !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+}
+legend.scheduler-border {
+  font-size: 1.2em !important;
+  font-weight: normal !important;
+  text-align: left !important;
+  letter-spacing: 1px !important;
+}
+legend.scheduler-border {
+  width: inherit;
+/* Or auto */
+  padding: 0 10px;
+/* To give a bit of padding on the left and right */
+  border-bottom: none;
+}
+/*# sourceMappingURL=style.map *//*# sourceMappingURL=style.map */

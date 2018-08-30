@@ -1,6 +1,54 @@
-assets/*
-!assets/.gitignore
-protected/runtime/*
-!protected/runtime/.gitignore
-protected/data/*.db
-themes/classic/views/
+# Env
+/.env
+/vhost.conf
+
+# composer
+# 
+/vendor
+/backend/tasks/node_modules
+/backend/tasks/bower_components
+/backend/web/assets
+/storage/web/uploads/images/*
+/storage/web/uploads/std_reg/*
+/frontend/web/assets
+/backend/runtime/debug
+/frontend/runtime/debug
+/storage/web/backups
+/rest/node_modules
+
+# composer
+/vendor
+composer.phar
+## remove in production!
+composer.lock
+
+# IDE
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit
+phpunit.phar
+/phpunit.xml
+
+# Vagrant
+/.vagrant
+/vagrant.yaml
+
+
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
