@@ -5,6 +5,8 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use common\helpers;
 use \backend\modules\initilize\models\Category;
+use \backend\modules\initilize\models\Region;
+use \backend\modules\initilize\models\Town;
 use kartik\widgets\FileInput;
 
 
@@ -149,17 +151,23 @@ use kartik\widgets\FileInput;
 
 
 <div class="form-group">
-    <?= $form->field($model->getModel('registartionModel'), 'region_id')->textInput(['placeholder' => 'Region']) ?>
+ 
+
+ <?php echo $form->field($model->getModel('registartionModel'), 'region_id')->dropDownList(
+            ArrayHelper::map(Region::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Select Category', 'maxlength' => true] );
 
 
+// $form->field($model->getModel('registartionModel'), 'region_id')->textInput(['placeholder' => 'Region']) 
+            ?>
 </div>
 
  
 <div class="form-group">
-    <?= $form->field($model->getModel('registartionModel'), 'town_id')->textInput(['placeholder' => 'Town']) ?>
-
-
-
+    
+ <?php echo $form->field($model->getModel('registartionModel'), 'town_id')->dropDownList(
+            ArrayHelper::map(Town::find()->asArray()->all(), 'id', 'name'), ['prompt' => 'Select Category', 'maxlength' => true]);
+// $form->field($model->getModel('registartionModel'), 'town_id')->textInput(['placeholder' => 'Town'])
+?>
 </div>
    
 
